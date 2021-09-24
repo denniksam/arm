@@ -1,0 +1,190 @@
+body {
+    background: #eee;
+    margin: 0;    
+    overflow-y: scroll;
+    padding: 0;    
+}
+main {
+    min-width: 640px;
+    width: 100%;
+}
+.auth-bar {
+    background: #777;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+    .auth-bar form {
+        display: inline-block;
+    }
+    .auth-bar strong {
+        color: #fee;
+        margin-left: 20px;
+    }
+    .auth-bar a {
+        background: #bbb;
+        border-radius: 5px;
+        color: #333;
+        cursor: pointer;
+        font-weight: bold;
+        margin-left: 40px;
+        padding: 4px 10px 5px 10px;
+        text-decoration: none;
+    }
+    .auth-bar img {
+        border-radius: 50%;
+        height: 35px;
+        margin: 0 5px;
+        vertical-align: middle;
+        width: 35px;
+    }
+
+.task-container {
+    background: #ccc;
+    float: left;
+    padding: 2% 4%;
+    margin: 1%;
+    width: 65%;  /* viewport width - % от ширины окна страницы */
+}
+
+.task-item {
+    border: 2px solid #999;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px #aaa;
+    font-family: Arial;
+    margin-bottom: 2vh;
+    position: relative;
+}
+.task-chief {
+    background: #dfd;
+}
+.task-manager {
+    background: #fcf;
+}
+    .task-item b { /* title */ 
+        float: left;  /* anti margin collapse */
+        font-size: 4vw;
+        padding: 2vw 3vw;        
+    }
+    .task-item p {  /* description */
+        /*clear: left;*/
+        margin-left: 4vw;
+        padding: 0.5vh 1vw;
+        width: 70%;
+    }
+    .task-item img {  /* calendar icon */
+        margin-left: 4vw;
+        vertical-align: top;
+        width: 4vw;
+    }
+    .task-item i {  /* deadline  */
+        display: inline-block;
+        padding-top: 1vw;
+        vertical-align: top;
+    }
+    .task-item .date-normal {
+        color: green;
+    }
+    .task-item .date-hot {
+        color: orange;
+        font-weight: 700;
+    }
+    .task-item .date-fail {
+        color: red;
+        font-weight: 900;
+        text-decoration: line-through;
+    }
+    .task-item .task-controls {
+        /*background: #bbb;*/
+        bottom: 1vh;
+        /*height: 100%;*/
+        position: absolute;
+        right: 2vw;
+        width: 10vw;
+    }
+    .task-item .task-controls input[type=button] {
+        box-shadow: 0.2vw 0.2vw 2px #ccc;
+        display: block;
+        margin: 0.5vw;
+        width: 100%;
+    }
+    .task-item .task-controls input[type=button]:nth-child(1) {
+        background: #FF1744;
+        color: azure;
+    }
+    .task-item .task-controls input[type=button]:nth-child(2) {
+        background: #FF5733;
+        color: moccasin;
+    }
+    .task-item .task-controls input[type=button]:nth-child(3) {
+        background: #3949AB;
+        color: snow;
+    }
+    .task-item .description-edit { /* "кнопка" редактирования описания задачи*/
+        background: url(/ARM/img/icon-set.png);
+        background-position: -34% 0; /* 47% - V */
+        background-size: 800%;
+        clear: both;
+        float: left;
+        height: 4vw;
+        width: 4vw;
+    }
+    
+    
+    .task-accept b {
+        color: olivedrab;
+        text-decoration: line-through;
+    }
+    .task-reject b {
+        color: maroon;
+        text-decoration: line-through;
+    }
+    .task-del {
+        height: 2vw;
+        opacity: 0.3;
+        overflow: hidden;
+    }
+    
+.task-filter {
+    background: #ddd;
+    float: right;
+    margin-top: 1vw;
+    width: 24%;
+}
+    .task-filter label {
+        display: block;
+        margin: 1vw;
+    }
+    .task-filter input[type=submit] {
+        display: block;
+        margin: 1vw auto;
+    }
+    
+.add-task {  /* Блок постановки задачи */ 
+    background: #ddd;
+    float: right;
+    margin-top: 2vh;
+    width: 24%;
+}
+    .add-task h3 {  /* title */
+        text-align: center;
+    }
+  
+.admin-user {  /* admin panel (fragment)) */
+    background: #ddd;
+    float: left;
+    margin-top: 2vh;
+    width: 24%;
+}
+    .admin-user option[del="1"] {
+        color: red;
+        font-style: italic;
+    }
+    
+.msg-block {  /* Message from servlet */
+    background: tomato;
+    padding: 3vw 5vw;
+    position: fixed;
+    right: 5vw;
+    top: 2vw;    
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <filter>
+        <filter-name>checkDbFilter</filter-name>
+        <filter-class>filters.CheckDbFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>checkDbFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+        <filter-name>checkAuthFilter</filter-name>
+        <filter-class>filters.CheckAuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>checkAuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>authServlet</servlet-name>
+        <servlet-class>servlets.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>regServlet</servlet-name>
+        <servlet-class>servlets.RegServlet</servlet-class>
+        <multipart-config />
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>regServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+        <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>taskServlet</servlet-name>
+        <servlet-class>servlets.TaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>taskServlet</servlet-name>
+        <url-pattern>/task</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>taskControlServlet</servlet-name>
+        <servlet-class>servlets.TaskControlServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>taskControlServlet</servlet-name>
+        <url-pattern>/taskcontrol/*</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
