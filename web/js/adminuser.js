@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if( ! sel ) throw "Admin script: select[name=userId] not found" ;
     // назначаем обработчик события
     sel.addEventListener("change", selectUserChange);
+    selectUserChange();
 });
 
 function delBtnClick() {
@@ -26,7 +27,7 @@ function delBtnClick() {
     if( ! item ) throw "Admin script: select[name=userId] not found" ;
     
     const del = item[item.selectedIndex].getAttribute("del");
-    console.log(del);
+    // console.log(del);
     if( del == "1" ) {  // Восстановление
         fetch( "admin/user?uid=" + item.value, { method: "put" } )
             .then(r=>r.text())
@@ -45,14 +46,22 @@ function delBtnClick() {
 }
 
 // обработчик события изменения выбора пользователя
-function selectUserChange(e) {
-    const opt = e.target[e.target.selectedIndex];
-    const del = opt.getAttribute("del") ;
+function selectUserChange() {
+    // получаем выбранного пользователя
+    const item = document.querySelector("select[name=userId]");
+    // проверяем выбор
+    if( ! item ) throw "Admin script: select[name=userId] not found" ;
+    
+    const ava = item[item.selectedIndex].getAttribute("ava");
+    const avaImg = document.getElementById("admin-user-ava");
+    if( ava && avaImg ) avaImg.src = "/ARM/ava/" + ava;
+    
+    const del = item[item.selectedIndex].getAttribute("del");
     const delBtn = document.getElementById("del-user-button");
     if(del=="1"){
         delBtn.value = "Восстановить";
     } else {
         delBtn.value = "Удалить";
-    }    
+    }
     //console.log(del);
 }

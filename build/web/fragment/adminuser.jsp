@@ -13,11 +13,15 @@
     Пользователь:
     <select name="userId">
         <% if( users != null ) for( orm.User user : users ) { %>
-        <option value="<%= user.getId() %>" del="<%= user.getIsDeleted() %>" >
+        <option value="<%= user.getId() %>" 
+                del="<%= user.getIsDeleted() %>"
+                ava="<%= user.getAvatar() %>">
             <%= user.getName() %>
         </option>
         <% } %>
     </select>
+    <img id="admin-user-ava" 
+         class="admin-user-ava"/>
     <br/>
     <input type="button" id="del-user-button" value="Удалить" />
 </div>

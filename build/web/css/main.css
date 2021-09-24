@@ -133,7 +133,20 @@ main {
     
     .task-accept b {
         color: olivedrab;
+        padding-left: 6vw;
+        position: relative;
         text-decoration: line-through;
+    }
+    .task-accept b::before {
+        content: "";
+        background: url(/ARM/img/icon-set.png);
+        background-position: -34% 47%; /* 47% - V */
+        background-size: 800%;
+        display: block;
+        height: 4vw;
+        left: 2vw;
+        position: absolute;
+        width: 4vw;
     }
     .task-reject b {
         color: maroon;
@@ -187,4 +200,7 @@ main {
     position: fixed;
     right: 5vw;
     top: 2vw;    
+}
+.admin-user-ava {
+    max-width: 5vw;
 }
